@@ -1,0 +1,16 @@
+version: '3.0'
+
+services:
+
+  flight-reservation:
+    container_name: flight-reservation
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: flight_reservation:1.0
+    volumes:
+      - ./backend/app:/backend/app
+    command:
+      - "2000"
+    ports:
+      - 2000:2000
